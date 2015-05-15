@@ -1,0 +1,8 @@
+{
+  "name": "react-router-animation",
+  "version": "1.0.0",
+  "description": "React router animation example",
+  "main": "app.js",
+  "author": "boopathi",
+  "license": "MIT"
+}
