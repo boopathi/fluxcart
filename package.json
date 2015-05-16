@@ -1,8 +1,23 @@
 {
-  "name": "react-router-animation",
+  "name": "fluxcart",
   "version": "1.0.0",
-  "description": "React router animation example",
+  "private": true,
+  "description": "Flux Cart",
   "main": "app.js",
   "author": "boopathi",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "babel-core": "^5.4.2",
+    "babel-loader": "^5.1.0",
+    "bluebird": "^2.9.25",
+    "flummox": "^4.0.0-alpha2",
+    "jss": "^1.0.8",
+    "node-libs-browser": "^0.5.0",
+    "react": "^0.13.3",
+    "react-hot-loader": "^1.2.7",
+    "react-jss": "^1.0.0",
+    "react-router": "^0.13.3",
+    "webpack": "^1.9.6",
+    "webpack-dev-server": "^1.8.2"
+  }
 }
