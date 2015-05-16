@@ -12,6 +12,7 @@
     "bluebird": "^2.9.25",
     "flummox": "^4.0.0-alpha2",
     "jss": "^1.0.8",
+    "jss-nested": "^0.1.7",
     "node-libs-browser": "^0.5.0",
     "react": "^0.13.3",
     "react-hot-loader": "^1.2.7",

@@ -12,9 +12,15 @@ module.exports = {
 		filename: 'app.bundle.js'
 	},
 	devtool: 'eval',
+	resolve: {
+		root: [
+			path.join(__dirname, 'node_modules')
+		]
+	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
+		new webpack.optimize.DedupePlugin(),
 	],
 	module: {
 		loaders: [

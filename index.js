@@ -35,14 +35,14 @@ let {
 
 let routes = (
 	<Route name='app' path='/' handler={App}>
-		<Route name='homepage' path='/home' handler={Homepage}>
-			<Route name='deals' path='/deals' handler={Deals} />
+		<Route name='homepage' path='home' handler={Homepage}>
+			<Route name='deals' path='deals' handler={Deals} />
 		</Route>
-		<Route name='browsepage' path='/browse' handler={Browsepage}>
-			<Route name='filters' path='/deals' handler={Filters} />
+		<Route name='browsepage' path='browse' handler={Browsepage}>
+			<Route name='filters' path='filters' handler={Filters} />
 		</Route>
-		<Route name='productpage' path='/p' handler={Productpage}>
-			<Route name='comments' path='/deals' handler={Comments} />
+		<Route name='productpage' path='p' handler={Productpage}>
+			<Route name='comments' path='comments' handler={Comments} />
 		</Route>
 		<DefaultRoute handler={Intropage} />
 	</Route>
