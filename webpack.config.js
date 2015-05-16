@@ -9,9 +9,12 @@ module.exports = {
 	],
 	output: {
 		path: path.join(__dirname, 'build'),
-		filename: 'app.bundle.js'
+		filename: 'app.js',
+		sourceMapFilename: 'app.map'
 	},
-	devtool: '#eval',
+	devtool: process.env.NODE_ENV==='production'
+		? '#source-map'
+		: '#eval',
 	resolve: {
 		root: [
 			path.join(__dirname, 'node_modules')
@@ -21,6 +24,11 @@ module.exports = {
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
 		new webpack.optimize.DedupePlugin(),
+		new webpack.DefinePlugin({
+			'process.env': {
+				NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+			}
+		})
 	],
 	module: {
 		loaders: [
@@ -31,4 +39,22 @@ module.exports = {
 			}
 		]
 	}
+};
+
+if (process.env.NODE_ENV === 'production') {
+	module.exports.plugins.push(
+		new webpack.optimize.UglifyJsPlugin({
+			compress: {
+				warnings: false,
+				conditionals: true,
+				unused: true,
+				comparisons: true,
+				sequences: true,
+				dead_code: true,
+				evaluate: true,
+				if_return: true,
+				join_vars: true
+			}
+		})
+	);
 }
