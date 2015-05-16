@@ -1,16 +1,24 @@
 var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
-	entry: [
+var entry = {};
+var appentry = path.join(__dirname, 'index.js');
+if (process.env.NODE_ENV === 'production') {
+	entry.app = appentry;
+} else {
+	entry.app = [
 		'webpack-dev-server/client?http://localhost:' + (process.env.port || 3000),
 		'webpack/hot/only-dev-server',
-		path.join(__dirname, 'index.js')
-	],
+		appentry
+	];
+}
+
+module.exports = {
+	entry: entry,
 	output: {
 		path: path.join(__dirname, 'build'),
-		filename: 'app.js',
-		sourceMapFilename: 'app.map'
+		filename: '[name].js',
+		sourceMapFilename: '[name].map'
 	},
 	devtool: process.env.NODE_ENV==='production'
 		? '#source-map'
