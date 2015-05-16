@@ -13,8 +13,8 @@ export default class App extends Flux {
 	constructor() {
 		super();
 
-		// this.createActions('home', HomepageActions);
-		// this.createStore('home', HomepageStore);
+		this.createActions('home', HomepageActions);
+		this.createStore('home', HomepageStore, this);
 
 		// this.createActions('browse', BrowsepageActions);
 		// this.createStore('browse', BrowsepageStore);

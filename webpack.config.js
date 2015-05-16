@@ -11,7 +11,7 @@ module.exports = {
 		path: path.join(__dirname, 'build'),
 		filename: 'app.bundle.js'
 	},
-	devtool: 'eval',
+	devtool: '#eval',
 	resolve: {
 		root: [
 			path.join(__dirname, 'node_modules')
